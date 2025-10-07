@@ -12,7 +12,6 @@ import {
   VerifiedUserIcon,
   LockIcon,
   InventoryIcon,
-  SwapHorizIcon,
   HistoryIcon,
   PeopleIcon,
   AccountTreeIcon,
@@ -48,39 +47,6 @@ export const UserSideBarMenuItems: SideBarMenuItemType[] = [
       },
     ],
   },
-  // {
-  //   name: "Package",
-  //   icon: <DashboardIcon />,
-  //   isExpandable: true,
-  //   subItems: [
-  //     {
-  //       name: "Used Package",
-  //       path: "/user/package/used",
-  //       icon: <InventoryIcon />,
-  //     },
-  //     {
-  //       name: "Unused Package",
-  //       path: "/user/package/unused",
-  //       icon: <InventoryIcon />,
-  //     },
-  //     {
-  //       name: "Transfer Package",
-  //       path: "/user/package/transfer",
-  //       icon: <SwapHorizIcon />,
-  //     },
-  //     {
-  //       name: "Package History",
-  //       path: "/user/package/history",
-  //       icon: <HistoryIcon />,
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: "Activate",
-  //   icon: <CheckCircleIcon />,
-  //   path: "/user/activate",
-  //   isExpandable: false,
-  // },
   {
     name: "Team",
     icon: <GroupIcon />,
