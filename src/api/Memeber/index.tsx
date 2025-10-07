@@ -178,3 +178,17 @@ export const useCheckSponsorReward = (memberId: any) => {
     enabled: !!memberId,
   });
 };
+
+export const useGetMultiLevelSponsorship = () => {
+  return useQuery({
+    queryKey: ["multiLevelSponsors"],
+    queryFn: async () => {
+      const response = await get('/user/multi-level-sponsors');
+      if (response.success) {
+        return response.data;
+      } else {
+        throw new Error(response.message || "Failed to fetch multi-level sponsorship data");
+      }
+    }
+  });
+};
