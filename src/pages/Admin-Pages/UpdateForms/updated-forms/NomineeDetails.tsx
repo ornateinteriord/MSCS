@@ -29,7 +29,7 @@ import {
         <AccordionSummary
           expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
           sx={{
-            backgroundColor: "#04112f",
+            backgroundColor: "#7e22ce",
             color: "#fff",
           }}
         >
@@ -56,7 +56,7 @@ import {
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <PersonIcon sx={{ color: "#04112f" }} />
+                      <PersonIcon sx={{ color: "#7e22ce" }} />
                     </InputAdornment>
                   ),
                 }}
@@ -72,7 +72,7 @@ import {
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <PersonIcon sx={{ color: "#04112f" }} />
+                      <PersonIcon sx={{ color: "#7e22ce" }} />
                     </InputAdornment>
                   ),
                 }}
@@ -97,7 +97,7 @@ import {
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <PersonIcon sx={{ color: "#04112f" }} />
+                      <PersonIcon sx={{ color: "#7e22ce" }} />
                     </InputAdornment>
                   ),
                 }}

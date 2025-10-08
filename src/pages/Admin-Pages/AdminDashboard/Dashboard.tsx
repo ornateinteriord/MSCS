@@ -105,7 +105,7 @@ const AdminDashboard = () => {
         <Card className='bg-gray-300'>
           <CardContent>
             <div className="flex justify-between items-center mb-4">
-              <Typography variant="h6" style={{ fontWeight: 'bold', color: '#04112f' }}>Member Statistics</Typography>
+              <Typography variant="h6" style={{ fontWeight: 'bold', color: '#7e22ce' }}>Member Statistics</Typography>
             </div>
             <DashboardTable data={data} columns={getAdminDashboardTableColumns()} />
           </CardContent>

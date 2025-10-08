@@ -50,7 +50,7 @@ const Transaction = () => {
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             sx={{
-              backgroundColor: "#04112f",
+              backgroundColor: "#7e22ce",
               color: "#fff",
               "& .MuiSvgIcon-root": { color: "#fff" },
             }}
@@ -68,7 +68,7 @@ const Transaction = () => {
               highlightOnHover
               progressPending={isLoading}
               progressComponent={
-                <CircularProgress size={"4rem"} sx={{ color: "#04112F" }} />
+                <CircularProgress size={"4rem"} sx={{ color: "#7e22ce" }} />
               }
               noDataComponent={noDataComponent}
               subHeader

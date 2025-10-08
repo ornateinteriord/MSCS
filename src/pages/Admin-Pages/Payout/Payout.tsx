@@ -76,7 +76,7 @@ const PayoutTable= ({data,columns,tabTitle}:PayoutTableProps)=>{
       expandIcon={<ExpandMoreIcon />}
       sx={{
         mt: 2,
-        backgroundColor: "#04112f",
+        backgroundColor: "#7e22ce",
         color: "#fff",
         "& .MuiSvgIcon-root": { color: "#fff" },
       }}

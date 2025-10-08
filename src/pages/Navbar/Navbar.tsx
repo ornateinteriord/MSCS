@@ -62,7 +62,7 @@ const Navbar = ({
         position="fixed"
         className="navbar"
         style={{
-          background: "linear-gradient(170deg, #0f172a 43%, #071337 70%)",
+          background: "#6b21a8",
         }}
       >
         <Toolbar className="navbar-toolbar">

@@ -197,7 +197,7 @@ const RoutesProvider = ({
         >
           <Routes>
             {/* public routes */}
-            <Route index element={<Home />} />
+            <Route index element={<Login />} />
             <Route element={<PublicRoute />}>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
