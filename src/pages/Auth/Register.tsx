@@ -158,13 +158,13 @@ const Register = () => {
             <Typography
               component="h1"
               variant="h5"
-              sx={{ color: "#04112f", mb: 3, textAlign: "center" }}
+              sx={{ color: "#7e22ce", mb: 3, textAlign: "center" }}
             >
               Create Account
             </Typography>
             <Typography
               variant="body1"
-              sx={{ color: "#04112f", marginBottom: "15px", width: "50%" }}
+              sx={{ color: "#7e22ce", marginBottom: "15px", width: "50%" }}
             >
               Referal details
             </Typography>
@@ -189,17 +189,17 @@ const Register = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LockIcon sx={{ color: "#04112f" }} />
+                        <LockIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -216,17 +216,17 @@ const Register = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <PersonIcon sx={{ color: "#04112f" }} />
+                        <PersonIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -246,17 +246,17 @@ const Register = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <PersonIcon sx={{ color: "#04112f" }} />
+                        <PersonIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -273,17 +273,17 @@ const Register = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <EmailIcon sx={{ color: "#04112f" }} />
+                        <EmailIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -300,17 +300,17 @@ const Register = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LockIcon sx={{ color: "#04112f" }} />
+                        <LockIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -329,17 +329,17 @@ const Register = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LockIcon sx={{ color: "#04112f" }} />
+                        <LockIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -357,17 +357,17 @@ const Register = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <PhoneIcon sx={{ color: "#04112f" }} />
+                        <PhoneIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -383,17 +383,17 @@ const Register = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LocationOnIcon sx={{ color: "#04112f" }} />
+                        <LocationOnIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -408,8 +408,8 @@ const Register = () => {
                     alignItems: "center",
                   }}
                 >
-                  <FormLabel className="form-label" sx={{ color: "#04112f !important" }}>
-                    <WcIcon sx={{ color: "#04112f " }} />
+                  <FormLabel className="form-label" sx={{ color: "#7e22ce!important" }}>
+                    <WcIcon sx={{ color: "#7e22ce" }} />
                     Gender:
                   </FormLabel>
                   <RadioGroup
@@ -423,7 +423,7 @@ const Register = () => {
                       value="Male"
                       className="form-control-label"
                       control={
-                        <Radio sx={{ "&.Mui-checked": { color: "#04112f" } }} />
+                        <Radio sx={{ "&.Mui-checked": { color: "#7e22ce" } }} />
                       }
                       label="Male"
                     />
@@ -431,7 +431,7 @@ const Register = () => {
                       className="form-control-label"
                       value="Female"
                       control={
-                        <Radio sx={{ "&.Mui-checked": { color: "#04112f" } }} />
+                        <Radio sx={{ "&.Mui-checked": { color: "#7e22ce" } }} />
                       }
                       label="Female"
                     />
@@ -446,11 +446,11 @@ const Register = () => {
                       <Checkbox
                         checked={isChecked}
                         onChange={handleCheckboxChange}
-                        sx={{ color: "#04112f" }}
+                        sx={{ color: "#7e22ce" }}
                       />
                     }
                     label={
-                      <Typography variant="body2" sx={{ color: "#04112f" }}>
+                      <Typography variant="body2" sx={{ color: "#7e22ce" }}>
                         I accept the Terms and Conditions
                       </Typography>
                     }
@@ -463,10 +463,10 @@ const Register = () => {
                     className="signup-btn"
                     disabled={!isChecked || isPending}
                     sx={{
-                      backgroundColor: "#04112f",
+                      backgroundColor: "#7e22ce",
                       marginRight: "130px",
                       "&:hover": {
-                        backgroundColor: "#0a1f4d",
+                        backgroundColor: "#581c87",
                       },
                     }}
                   >
@@ -480,7 +480,7 @@ const Register = () => {
               <Link
                 to="/login"
                 style={{
-                  color: "#04112f",
+                  color: "#7e22ce",
                   textDecoration: "none",
                   fontWeight: "bold",
                 }}
@@ -491,7 +491,7 @@ const Register = () => {
             <Typography variant="body2" sx={{ textAlign: "center", mt: 1 }}>
               <Link to="/recover-password" 
               style={{
-                  color: "#04112f",
+                  color: "#7e22ce",
                   textDecoration: "none",
                   fontWeight: "bold",
                 }}>

@@ -62,14 +62,14 @@ const RecoverPassword = () => {
             <Typography
               component="h1"
               variant="h5"
-              sx={{ color: "#04112f", mb: 3, textAlign: "center" }}
+              sx={{ color: "#7e22ce", mb: 3, textAlign: "center" }}
             >
               Recover Password
             </Typography>
             <Typography
               component="h1"
               variant="body1"
-              sx={{ color: "#04112f", mb: 3, textAlign: "center" }}
+              sx={{ color: "#7e22ce", mb: 3, textAlign: "center" }}
             >
               Forgot your Password?
             </Typography>
@@ -90,17 +90,17 @@ const RecoverPassword = () => {
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <EmailIcon sx={{ color: "#04112f" }} />
+                      <EmailIcon sx={{ color: "#7e22ce" }} />
                     </InputAdornment>
                   ),
                 }}
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "&:hover fieldset": {
-                      borderColor: "#04112f",
+                      borderColor: "#7e22ce",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "#04112f",
+                      borderColor: "#7e22ce",
                     },
                   },
                 }}
@@ -111,8 +111,8 @@ const RecoverPassword = () => {
                 fullWidth
                 variant="contained"
                 sx={{
-                  backgroundColor: "#04112f",
-                  "&:hover": { backgroundColor: "#0a1f4d" },
+                  backgroundColor: "#7e22ce",
+                  "&:hover": { backgroundColor: "#581c87" },
                 }}
               >
                 Recover Password
@@ -123,7 +123,7 @@ const RecoverPassword = () => {
               <Typography variant="body2" sx={{ textAlign: "center", mt: -2 }}>
               <Link to="/reset-password" 
               style={{
-                  color: "#04112f",
+                  color: "#7e22ce",
                   textDecoration: "none",
                   fontWeight: "bold",
                 }}>

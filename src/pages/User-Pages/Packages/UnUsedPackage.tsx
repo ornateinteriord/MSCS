@@ -38,7 +38,7 @@ const UnUsedPackage = () => {
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             sx={{
-                backgroundColor: '#04112f',
+                backgroundColor: '#7e22ce',
                 color: '#fff',
                 '& .MuiSvgIcon-root': { color: '#fff' }
               }}

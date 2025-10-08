@@ -140,7 +140,7 @@ const MailBox = () => {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               sx={{
-                backgroundColor: "#04112f",
+                backgroundColor: "#7e22ce",
                 color: "#fff",
                 "& .MuiSvgIcon-root": { color: "#fff" },
                 minHeight: "64px",
@@ -169,11 +169,11 @@ const MailBox = () => {
                     sx={{
                       "& .MuiOutlinedInput-notchedOutline": {
                         "&:hover": {
-                          borderColor: "#04112f",
+                          borderColor: "#7e22ce",
                         },
                       },
                       "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     }}
                   >
@@ -198,10 +198,10 @@ const MailBox = () => {
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -220,10 +220,10 @@ const MailBox = () => {
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -234,10 +234,10 @@ const MailBox = () => {
                   variant="contained"
                   size="medium"
                   sx={{
-                    backgroundColor: "#04112f",
+                    backgroundColor: "#7e22ce",
                     alignSelf: "flex-end",
                     "&:hover": {
-                      backgroundColor: "#0a1f4d",
+                      backgroundColor: "#581c87",
                     },
                   }}
                 >
@@ -252,7 +252,7 @@ const MailBox = () => {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               sx={{
-                backgroundColor: "#04112f",
+                backgroundColor: "#7e22ce",
                 color: "#fff",
                 "& .MuiSvgIcon-root": { color: "#fff" },
                 minHeight: "64px",
@@ -269,7 +269,7 @@ const MailBox = () => {
                 paginationPerPage={25}
                 progressPending={isLoading || createTicketMutation.isPending}
                 progressComponent={
-                  <CircularProgress size={"4rem"} sx={{ color: "#04112F" }} />
+                  <CircularProgress size={"4rem"} sx={{ color: "#7e22ce" }} />
                 }
                 paginationRowsPerPageOptions={[25, 50, 100]}
                 highlightOnHover
@@ -309,7 +309,7 @@ const MailBox = () => {
       >
         <DialogTitle
           sx={{
-            backgroundColor: "#04112f",
+            backgroundColor: "#7e22ce",
             color: "#fff",
             display: "flex",
             justifyContent: "space-between",
@@ -330,7 +330,7 @@ const MailBox = () => {
           {selectedTicket && (
             <>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                <Typography variant="h6" sx={{ color: "#04112f" }}>
+                <Typography variant="h6" sx={{ color: "#7e22ce" }}>
                   Ticket Information
                 </Typography>
                 <Box
@@ -374,7 +374,7 @@ const MailBox = () => {
 
                 <Divider sx={{ my: 2 }} />
 
-                <Typography variant="h6" sx={{ color: "#04112f" }}>
+                <Typography variant="h6" sx={{ color: "#7e22ce" }}>
                   Reply Details
                 </Typography>
                 <Box

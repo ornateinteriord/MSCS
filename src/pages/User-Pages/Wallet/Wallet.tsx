@@ -59,7 +59,7 @@ const Wallet = () => {
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             sx={{
-              backgroundColor: "#04112f",
+              backgroundColor: "#7e22ce",
               color: "#fff",
               "& .MuiSvgIcon-root": { color: "#fff" },
               minHeight: isMobile ? "48px" : "64px",
@@ -81,7 +81,7 @@ const Wallet = () => {
                   <Typography variant="subtitle1" color="textSecondary">
                     Available Balance
                   </Typography>
-                  <Typography variant="h4" sx={{ color: "#04112f", mt: 1 }}>
+                  <Typography variant="h4" sx={{ color: "#7e22ce", mt: 1 }}>
                     ₹10,000
                   </Typography>
                 </Box>
@@ -98,7 +98,7 @@ const Wallet = () => {
                   <Typography variant="subtitle1" color="textSecondary">
                     Total Income
                   </Typography>
-                  <Typography variant="h4" sx={{ color: "#04112f", mt: 1 }}>
+                  <Typography variant="h4" sx={{ color: "#7e22ce", mt: 1 }}>
                     ₹50,000
                   </Typography>
                 </Box>
@@ -115,7 +115,7 @@ const Wallet = () => {
                   <Typography variant="subtitle1" color="textSecondary">
                     Total Withdrawal
                   </Typography>
-                  <Typography variant="h4" sx={{ color: "#04112f", mt: 1 }}>
+                  <Typography variant="h4" sx={{ color: "#7e22ce", mt: 1 }}>
                     ₹40,000
                   </Typography>
                 </Box>
@@ -139,7 +139,7 @@ const Wallet = () => {
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             sx={{
-              backgroundColor: "#04112f",
+              backgroundColor: "#7e22ce",
               color: "#fff",
               "& .MuiSvgIcon-root": { color: "#fff" },
               minHeight: isMobile ? "48px" : "64px",
@@ -165,10 +165,10 @@ const Wallet = () => {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "&:hover fieldset": {
-                      borderColor: "#04112f",
+                      borderColor: "#7e22ce",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "#04112f",
+                      borderColor: "#7e22ce",
                     },
                   },
                 }}
@@ -181,8 +181,8 @@ const Wallet = () => {
                   label="Withdrawal Amount"
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      "&:hover fieldset": { borderColor: "#04112f" },
-                      "&.Mui-focused fieldset": { borderColor: "#04112f" },
+                      "&:hover fieldset": { borderColor: "#7e22ce" },
+                      "&.Mui-focused fieldset": { borderColor: "#7e22ce" },
                     },
                   }}
                 >
@@ -205,10 +205,10 @@ const Wallet = () => {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "&:hover fieldset": {
-                      borderColor: "#04112f",
+                      borderColor: "#7e22ce",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "#04112f",
+                      borderColor: "#7e22ce",
                     },
                   },
                 }}
@@ -222,10 +222,10 @@ const Wallet = () => {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "&:hover fieldset": {
-                      borderColor: "#04112f",
+                      borderColor: "#7e22ce",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "#04112f",
+                      borderColor: "#7e22ce",
                     },
                   },
                 }}
@@ -244,10 +244,10 @@ const Wallet = () => {
                 <Button
                   variant="contained"
                   sx={{
-                    backgroundColor: "#04112f",
+                    backgroundColor: "#7e22ce",
                     alignSelf: "flex-end",
                     "&:hover": {
-                      backgroundColor: "#0a1f4d",
+                      backgroundColor: "#581c87",
                     },
                   }}
                 >
@@ -272,7 +272,7 @@ const Wallet = () => {
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             sx={{
-              backgroundColor: "#04112f",
+              backgroundColor: "#7e22ce",
               color: "#fff",
               "& .MuiSvgIcon-root": { color: "#fff" },
               minHeight: isMobile ? "48px" : "64px",

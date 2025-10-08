@@ -46,7 +46,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
       <AccordionSummary
         expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
         sx={{
-          backgroundColor: "#04112f",
+          backgroundColor: "#7e22ce",
           color: "#fff",
         }}
       >
@@ -73,7 +73,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <PersonIcon sx={{ color: "#04112f" }} />
+                    <PersonIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -89,7 +89,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <PersonIcon sx={{ color: "#04112f" }} />
+                    <PersonIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -107,7 +107,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <LocationOnIcon sx={{ color: "#04112f" }} />
+                    <LocationOnIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -123,7 +123,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <LocationOnIcon sx={{ color: "#04112f" }} />
+                    <LocationOnIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -139,7 +139,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <LocationOnIcon sx={{ color: "#04112f" }} />
+                    <LocationOnIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -155,7 +155,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <LocationOnIcon sx={{ color: "#04112f" }} />
+                    <LocationOnIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -170,8 +170,8 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
             }}
           >
             <FormControl>
-              <FormLabel sx={{ color: "#04112f" }}>
-                <WcIcon sx={{ color: "#04112f" }} />
+              <FormLabel sx={{ color: "#7e22ce" }}>
+                <WcIcon sx={{ color: "#7e22ce" }} />
                 Gender
               </FormLabel>
               <RadioGroup
@@ -183,14 +183,14 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
                 <FormControlLabel
                   value="Male"
                   control={
-                    <Radio sx={{ "&.Mui-checked": { color: "#04112f" } }} />
+                    <Radio sx={{ "&.Mui-checked": { color: "#7e22ce" } }} />
                   }
                   label="Male"
                 />
                 <FormControlLabel
                   value="Female"
                   control={
-                    <Radio sx={{ "&.Mui-checked": { color: "#04112f" } }} />
+                    <Radio sx={{ "&.Mui-checked": { color: "#7e22ce" } }} />
                   }
                   label="Female"
                 />
@@ -215,7 +215,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <EmailIcon sx={{ color: "#04112f" }} />
+                    <EmailIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -232,7 +232,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <PhoneIcon sx={{ color: "#04112f" }} />
+                    <PhoneIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -249,7 +249,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <LockIcon sx={{ color: "#04112f" }} />
+                    <LockIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}
@@ -266,7 +266,7 @@ export  const  BasicDetails: React.FC<BasicDetailsProps> = ({
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <LockIcon sx={{ color: "#04112f" }} />
+                    <LockIcon sx={{ color: "#7e22ce" }} />
                   </InputAdornment>
                 ),
               }}

@@ -74,7 +74,7 @@ const UpdatePassword: React.FC = () => {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               sx={{
-                backgroundColor: "#04112f",
+                backgroundColor: "#7e22ce",
                 color: "#fff",
                 "& .MuiSvgIcon-root": { color: "#fff" },
               }}
@@ -99,17 +99,17 @@ const UpdatePassword: React.FC = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <PersonIcon sx={{ color: "#04112f" }} />
+                        <PersonIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -126,17 +126,17 @@ const UpdatePassword: React.FC = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <VpnKeyIcon sx={{ color: "#04112f" }} />
+                        <VpnKeyIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -153,17 +153,17 @@ const UpdatePassword: React.FC = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LockIcon sx={{ color: "#04112f" }} />
+                        <LockIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -180,17 +180,17 @@ const UpdatePassword: React.FC = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <KeyIcon sx={{ color: "#04112f" }} />
+                        <KeyIcon sx={{ color: "#7e22ce" }} />
                       </InputAdornment>
                     ),
                   }}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&:hover fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#04112f",
+                        borderColor: "#7e22ce",
                       },
                     },
                   }}
@@ -204,10 +204,10 @@ const UpdatePassword: React.FC = () => {
                     !formData.confirmPassword
                   }
                   sx={{
-                    backgroundColor: "#04112f",
+                    backgroundColor: "#7e22ce",
                     alignSelf: "flex-end",
                     "&:hover": {
-                      backgroundColor: "#0a1f4d",
+                      backgroundColor: "#581c87",
                     },
                   }}
                 >

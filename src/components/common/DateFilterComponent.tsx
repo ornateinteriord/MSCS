@@ -93,10 +93,10 @@ export const MuiDatePicker: React.FC<Props> = ({ date, setDate, label }) => {
             size: "small",
             sx: {
               "& label": {
-                color: "#04112f",
+                color: "#7e22ce",
               },
               "& label.Mui-focused": {
-                color: "#04112f",
+                color: "#7e22ce",
               },
             },
           },

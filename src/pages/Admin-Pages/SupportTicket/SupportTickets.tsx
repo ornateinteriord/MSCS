@@ -91,7 +91,7 @@ const SupportTickets = () => {
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               sx={{
-                backgroundColor: '#04112f',
+                backgroundColor: '#7e22ce',
                 color: '#fff',
                 '& .MuiSvgIcon-root': { color: '#fff' }
               }}
@@ -116,7 +116,7 @@ const SupportTickets = () => {
                 paginationPerPage={25}
                 progressPending={isLoading}
                 progressComponent={
-                  <CircularProgress size={"4rem"} sx={{ color: "#04112F" }}  />
+                  <CircularProgress size={"4rem"} sx={{ color: "#7e22ce" }}  />
                 }
                 paginationRowsPerPageOptions={[25, 50, 100]}
                 highlightOnHover
@@ -127,7 +127,7 @@ const SupportTickets = () => {
       </Card>
 
       <Dialog open={isReplyDialogOpen} onClose={handleCloseDialog} maxWidth="sm" fullWidth>
-        <DialogTitle sx={{ backgroundColor: '#04112f', color: '#fff' }}>
+        <DialogTitle sx={{ backgroundColor: '#7e22ce', color: '#fff' }}>
           Reply to Ticket #{selectedTicket?.ticket_no}
         </DialogTitle>
         <DialogContent sx={{ mt: 2 }}>
@@ -156,10 +156,10 @@ const SupportTickets = () => {
               mt: 1,
               '& .MuiOutlinedInput-root': {
                 '&:hover fieldset': {
-                  borderColor: '#04112f',
+                  borderColor: '#7e22ce',
                 },
                 '&.Mui-focused fieldset': {
-                  borderColor: '#04112f',
+                  borderColor: '#7e22ce',
                 }
               }
             }}
@@ -174,8 +174,8 @@ const SupportTickets = () => {
          onClick={handleSubmitReply}
          variant="contained"
          sx={{
-           backgroundColor: '#04112f',
-           '&:hover': { backgroundColor: '#0a1f4d' }
+           backgroundColor: '#7e22ce',
+           '&:hover': { backgroundColor: '#581c87' }
          }}
          disabled={!selectedTicket}
        >

@@ -60,8 +60,8 @@ const UserDashboard = () => {
 
   return (
     <>
-      <div className="h-auto md:h-40 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center mt-10 py-6 md:py-0">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <div className="h-auto md:h-40 relative w-full overflow-hidden bg-[#6b21a8] flex flex-col items-center justify-center mt-10 py-6 md:py-0">
+        <div className="absolute inset-0 w-full h-full z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
         <div className="flex flex-col md:flex-row justify-evenly items-center w-full px-4 md:px-8 relative z-20 gap-6 md:gap-0">
           <div className="text-center md:text-left">
@@ -148,7 +148,7 @@ const UserDashboard = () => {
         <Card className='bg-gray-300'>
           <CardContent>
             <div className="flex justify-between items-center mb-4">
-              <Typography variant="h6" style={{ fontWeight: 'bold', color: '#04112f' }}>Member Statistics</Typography>
+              <Typography variant="h6" style={{ fontWeight: 'bold', color: '#7e22ce' }}>Member Statistics</Typography>
               <MuiDatePicker
                 date={selectedDate}
                 setDate={handleDateChange}

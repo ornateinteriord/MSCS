@@ -398,8 +398,8 @@ export const getSupportTicketColumns = (handleOpenDialog : any) =>  [
         variant="contained"
         onClick={() => handleOpenDialog(row)}
         sx={{
-          backgroundColor: '#04112f',
-          '&:hover': { backgroundColor: '#0a1f4d' }
+          backgroundColor: '#7e22ce',
+          '&:hover': { backgroundColor: '#581c87' }
         }}
       >
         Reply
@@ -501,7 +501,7 @@ export const getMailBoxColumns = (handleOpenDialog : any) => [
         onClick={() => handleOpenDialog(row)}
         size="medium"
         sx={{
-          color: '#04112f',
+          color: '#7e22ce',
           '&:hover': {
             backgroundColor: 'rgba(4, 17, 47, 0.04)'
           }
@@ -874,7 +874,7 @@ export const DASHBOARD_CUTSOM_STYLE = {
     style: {
       fontSize: "16px",
       fontWeight: "Bogle-Bold",
-      backgroundColor: "#04112fe3",
+      backgroundColor: "#7e22ce",
       color: "#fff",
       border: "none",
     },
