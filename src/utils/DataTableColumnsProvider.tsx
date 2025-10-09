@@ -200,7 +200,7 @@ export const getDailyPayoutColumns = () => [
 export const getTransactionColumns = () => [
   {
     name: "Date",
-    selector: (row: any) =>getFormattedDate( row.transaction_date),
+    selector: (row: any) => getFormattedDate(row.transaction_date),
     sortable: true,
   },
   {
@@ -219,6 +219,46 @@ export const getTransactionColumns = () => [
     sortable: true,
   },
   {
+    name: "Withdrawal Amount",
+    selector: (row: any) => row.ew_debit,
+    sortable: true,
+    cell: (row: any) => {
+      // For withdrawal transactions, show the actual withdrawal amount
+      if (row.transaction_type === "Withdrawal" && parseFloat(row.ew_debit) > 0) {
+        return `₹ ${parseFloat(row.ew_debit).toFixed(2)}`;
+      }
+      return "-";
+    }
+  },
+  {
+    name: "TDS (15%)",
+    selector: (row: any) => row.deduction,
+    sortable: true,
+    cell: (row: any) => {
+      // Calculate TDS for withdrawal transactions
+      if (row.transaction_type === "Withdrawal" && parseFloat(row.ew_debit) > 0) {
+        const withdrawalAmount = parseFloat(row.ew_debit);
+        const tds = withdrawalAmount * 0.15;
+        return `₹ ${tds.toFixed(2)}`;
+      }
+      return "-";
+    }
+  },
+  {
+    name: "Net Received",
+    selector: (row: any) => row.net_amount,
+    sortable: true,
+    cell: (row: any) => {
+      // Calculate net amount for withdrawal transactions
+      if (row.transaction_type === "Withdrawal" && parseFloat(row.ew_debit) > 0) {
+        const withdrawalAmount = parseFloat(row.ew_debit);
+        const netAmount = withdrawalAmount * 0.85; // 85% after 15% TDS
+        return `₹ ${netAmount.toFixed(2)}`;
+      }
+      return "-";
+    }
+  },
+  {
     name: "Status",
     selector: (row: any) => row.status,
     sortable: true,
@@ -230,38 +270,50 @@ export const getTransactionColumns = () => [
           borderRadius: "4px",
         }}
       >
-        {row.status.charAt(0).toUpperCase()+row.status.slice(1)}
+        {row.status.charAt(0).toUpperCase() + row.status.slice(1)}
       </div>
     ),
   },
 ];
 
+
+
 export const getWalletColumns = () => [
   {
     name: "Date",
-    selector: (row: any) => row.date,
+    selector: (row: any) => row.transaction_date, // Matches backend field
     sortable: true,
+    cell: (row : any) => new Date(row.transaction_date).toLocaleDateString() // Format date
   },
   {
     name: "Transaction ID",
-    selector: (row: any) => row.transactionId,
+    selector: (row: any) => row.transaction_id, // Matches backend field
     sortable: true,
   },
   {
     name: "Type",
-    selector: (row: any) => row.type,
+    selector: (row: any) => row.transaction_type, // Matches backend field
     sortable: true,
   },
   {
     name: "Amount",
-    selector: (row: any) => row.amount,
+    selector: (row: any) => row.ew_debit, // Or use ew_credit, depending on your logic
     sortable: true,
+    cell: (row: any) => {
+      // Example: Display debit as negative, credit as positive
+      if (parseFloat(row.ew_debit) > 0) {
+        return `-₹${parseFloat(row.ew_debit).toFixed(2)}`;
+      } else {
+        return `+₹${parseFloat(row.ew_credit).toFixed(2)}`;
+      }
+    }
   },
   {
     name: "Status",
-    selector: (row: any) => row.status,
+    selector: (row: any) => row.status, // Matches backend field
     sortable: true,
-  },
+    cell: (row: any) => row.status.charAt(0).toUpperCase() + row.status.slice(1) // Capitalize status
+  }
 ];
 
 export const getAdminDashboardTableColumns = () => [

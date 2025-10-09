@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Card, CardContent, Grid, Typography } from '@mui/material';
+import { Card, CardContent, Grid, Typography, Button } from '@mui/material';
 import { cn } from '../../../lib/utils';
 import '../../Dashboard/dashboard.scss';
 import DashboardTable from '../../Dashboard/DashboardTable';
@@ -11,16 +11,20 @@ import { useCheckSponsorReward } from '../../../api/Memeber';
 
 const UserDashboard = () => { 
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const memberId = TokenService.getMemberId();
-
-  const { data: rewardData, isLoading,  } = useCheckSponsorReward(memberId);
-
+  
+  const memberId = TokenService.getMemberId(); 
+  
+  // Use the sponsor reward hook
+  const { data: sponsorRewardData } = useCheckSponsorReward(memberId);
+  console.log('Sponsor Reward Data:', sponsorRewardData); // Debug log
   const handleDateChange = (date: string) => {
     setSelectedDate(date);
   };
 
   const handleClaimReward = () => {
-    alert("🎉 Reward claimed successfully!");
+    console.log('Claiming reward for member:', memberId);
+    console.log('Sponsor reward data:', sponsorRewardData);
+    // Add your claim reward logic here
   };
 
   const data = [
@@ -56,8 +60,6 @@ const UserDashboard = () => {
     },
   ];
 
-  const showClaimButton = rewardData?.isEligible && rewardData?.sponsorCount >= 2;
-
   return (
     <>
       <div className="h-auto md:h-40 relative w-full overflow-hidden bg-[#6b21a8] flex flex-col items-center justify-center mt-10 py-6 md:py-0">
@@ -89,29 +91,29 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
+            {sponsorRewardData?.isEligibleForReward && (
+        <div className="flex justify-center mt-4">
+          <Button
+            variant="contained"
+            color="success"
+            onClick={handleClaimReward}
+            sx={{
+              textTransform: 'capitalize',
+              backgroundColor: '#DDAC17',
+              '&:hover': { backgroundColor: '#Ecc440' },
+              fontWeight: 'bold',
+              px: 4,
+              py: 1,
+            }}
+          >
+            Claim Reward
+          </Button>
         </div>
-
-        {showClaimButton && (
-          <div className="flex flex-col items-center justify-center mt-4">
-            <Button
-              variant="contained"
-              color="success"
-              onClick={handleClaimReward}
-              sx={{ mt: 2 }}
-              disabled={isLoading}
-            >
-              🎁 Claim Reward ({rewardData?.sponsorCount} referrals)
-            </Button>
-          </div>
-        )}
-        {!isLoading && rewardData && !rewardData.isEligible && (
-          <div className="flex flex-col items-center justify-center mt-4">
-            <Typography variant="body2" color="white">
-              Need {2 - (rewardData?.sponsorCount || 0)} more referrals to claim reward
-            </Typography>
-          </div>
-        )}
+      )}
+        </div>
+        
       </div>
+    
 
       <Grid 
         container 

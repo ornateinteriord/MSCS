@@ -46,3 +46,8 @@ export interface MemberDetails {
   level_income: string;
   direct_income: string;
 }
+ export interface SponsorRewardData {
+  isEligibleForReward: boolean;
+  rewardAmount?: number;
+  // other properties from your API response
+}
