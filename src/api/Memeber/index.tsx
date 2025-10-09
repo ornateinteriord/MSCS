@@ -194,7 +194,6 @@ export const useGetWalletOverview = (memberId: any) => {
     enabled: !!memberId,
   });
 };
-
 export const useWalletWithdraw = () => {
   const queryClient = useQueryClient();
   
@@ -215,6 +214,9 @@ export const useWalletWithdraw = () => {
       const errorMessage = error.response?.data?.message || "Failed to process withdrawal";
       toast.error(errorMessage);
     },
+  }); 
+}; 
+
 export const useGetMultiLevelSponsorship = () => {
   return useQuery({
     queryKey: ["multiLevelSponsors"],
