@@ -171,13 +171,51 @@ export const useCheckSponsorReward = (memberId: any) => {
   return useQuery({
     queryKey: ["checkSponsorReward", memberId],
     queryFn: async () => {
-      if (!memberId) return null;
+      if (!memberId) return Promise.resolve({}); 
       const response = await get(`/user/check-sponsor-reward/${memberId}`);
-      return response.data;
+      return response; 
     },
     enabled: !!memberId,
   });
 };
+
+// Add these to your existing queries file
+export const useGetWalletOverview = (memberId: any) => {
+  return useQuery({
+    queryKey: ["walletOverview", memberId],
+    queryFn: async () => {
+      const response = await get(`/user/overview/${memberId}`);
+      if (response.success) {
+        return response.data;
+      } else {
+        throw new Error(response.message || "Failed to fetch wallet overview");
+      }
+    },
+    enabled: !!memberId,
+  });
+};
+export const useWalletWithdraw = () => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: async (data: { memberId: string; amount: string }) => {
+      return await post("/user/withdraw", data);
+    },
+    onSuccess: (response) => {
+      if (response.success) {
+        toast.success(response.message);
+        queryClient.invalidateQueries({ queryKey: ["walletOverview"] });
+        return response.data;
+      } else {
+        throw new Error(response.message || "Withdrawal failed");
+      }
+    },
+    onError: (error: any) => {
+      const errorMessage = error.response?.data?.message || "Failed to process withdrawal";
+      toast.error(errorMessage);
+    },
+  }); 
+}; 
 
 export const useGetMultiLevelSponsorship = () => {
   return useQuery({
