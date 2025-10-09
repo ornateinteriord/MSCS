@@ -25,6 +25,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import UserContext from '../../../context/user/userContext';
 import { useSignupMutation } from '../../../api/Auth';
 import { LoadingComponent } from '../../../App';
+import { toast } from 'react-toastify';
 
 const NewResgister: React.FC = () => {
   const {user} = useContext(UserContext)
@@ -49,23 +50,49 @@ const NewResgister: React.FC = () => {
 
   const { mutate, isPending } = useSignupMutation();
 
-  const handleSubmit =async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!formData.gender) {
       setGenderError(true);
       return;
     }
-    if (formData.password.length <= 5) {
-      setErrorMessage("Password must be atleast 6 character*");
+    if (formData.password && formData.password.length <= 5) {
+      setErrorMessage("Password must be at least 6 characters*");
       return;
     }
     try {
-      mutate({Sponsor_code: user.Member_id, Sponsor_name : user.Name ,...formData });
+      mutate({ 
+        Sponsor_code: user.Member_id, 
+        Sponsor_name: user.Name,
+        ...formData 
+      }, {
+        onSuccess: (response) => {
+          if (response.success) {
+            toast.success(
+              <div>
+                <div>Registration Successful!</div>
+                <div style={{ marginTop: '8px', fontSize: '14px' }}>
+                  <strong>Email:</strong> {response.user.email}<br/>
+                  <strong>Password:</strong> {formData.password}<br/>
+                </div>
+              </div>,
+              {
+                autoClose: 10000,
+                closeButton: true,
+              }
+            );
+          }
+        },
+        onError: (error) => {
+          toast.error(error.response?.data?.message || "Registration failed");
+        }
+      });
 
     } catch (error) {
       console.error("Registration failed:", error);
-    } finally{
-      setFormData({})
+      toast.error("Registration failed. Please try again.");
+    } finally {
+      // Don't clear form immediately, wait for success
     }
   };
 
@@ -176,7 +203,7 @@ const NewResgister: React.FC = () => {
               <TextField
                 label="Name"
                 name="Name"
-                value={formData.Name}
+                value={formData.Name || ''}
                 onChange={handleInputChange}
                 fullWidth
                 variant="outlined"
@@ -199,7 +226,7 @@ const NewResgister: React.FC = () => {
                   }
                 }}
               />
-              <FormControl  error={!!genderError}>
+              <FormControl error={!!genderError}>
                 <FormLabel sx={{ color: '#7e22ce', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <WcIcon sx={{ color: '#7e22ce' }} />
                   Gender
@@ -207,7 +234,7 @@ const NewResgister: React.FC = () => {
                 <RadioGroup
                   row
                   name="gender"
-                  value={formData.gender}
+                  value={formData.gender || ''}
                   onChange={handleRadioChange}
                 >
                   <FormControlLabel 
@@ -231,13 +258,13 @@ const NewResgister: React.FC = () => {
                 </RadioGroup>
               </FormControl>
               {genderError && (
-                   <FormHelperText sx={{color:"#d32f2f",marginTop:"-20px"}}>  Please select your gender*</FormHelperText>
+                <FormHelperText sx={{color:"#d32f2f",marginTop:"-20px"}}>Please select your gender*</FormHelperText>
               )}
               <TextField
                 label="Email"
                 name="email"
                 type="email"
-                value={formData.email}
+                value={formData.email || ''}
                 onChange={handleInputChange}
                 fullWidth
                 variant="outlined"
@@ -264,7 +291,7 @@ const NewResgister: React.FC = () => {
                 label="Mobile"
                 name="mobileno"
                 type="tel"
-                value={formData.mobileno}
+                value={formData.mobileno || ''}
                 onChange={handleInputChange}
                 fullWidth
                 variant="outlined"
@@ -290,7 +317,7 @@ const NewResgister: React.FC = () => {
               <TextField
                 label="Pin Code"
                 name="pincode"
-                value={formData.pincode}
+                value={formData.pincode || ''}
                 onChange={handleInputChange}
                 fullWidth
                 variant="outlined"
@@ -317,7 +344,7 @@ const NewResgister: React.FC = () => {
                 label="Password"
                 name="password"
                 type="password"
-                value={formData.password}
+                value={formData.password || ''}
                 onChange={handleInputChange}
                 fullWidth
                 variant="outlined"
@@ -348,18 +375,22 @@ const NewResgister: React.FC = () => {
 
         {/* Register Button */}
         <Button
-         onClick={handleSubmit}
+          onClick={handleSubmit}
           variant="contained"
+          disabled={isPending}
           sx={{
             backgroundColor: '#7e22ce',
             margin: '1rem',
             float: 'right',
             '&:hover': {
               backgroundColor: '#581c87'
+            },
+            '&:disabled': {
+              backgroundColor: '#cccccc'
             }
           }}
         >
-          Register
+          {isPending ? 'Registering...' : 'Register'}
         </Button>
       </CardContent>
       {isPending && <LoadingComponent/>}

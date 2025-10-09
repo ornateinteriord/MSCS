@@ -12,7 +12,6 @@ export const useSignupMutation = () => {
     },
     onSuccess: (response) => {
       if (response.success) {
-        toast.success(response.message);
       } else {
         console.error(response.message);
       }
