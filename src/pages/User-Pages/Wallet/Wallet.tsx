@@ -45,7 +45,6 @@ const Wallet = () => {
 
   const withdrawMutation = useWalletWithdraw();
 
-  // Initialize optimistic balance when wallet data loads
   useEffect(() => {
     if (walletData?.balance) {
       setOptimisticBalance(parseFloat(walletData.balance));
