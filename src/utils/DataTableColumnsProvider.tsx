@@ -849,6 +849,49 @@ export const getCashBackColumns = () =>[
   },
 ]
 
+export const getMultiLevelColumns = () => [
+  {
+    name: "Level",
+    selector: (row: any) => `Level ${row.level}`,
+    sortable: true,
+  },
+  {
+    name: "Total Members",
+    selector: (row: any) => row.total,
+    sortable: true,
+  },
+  {
+    name: "Active Members",
+    selector: (row: any) => row.active,
+    sortable: true,
+    cell: (row: any) => (
+      <div
+        style={{
+          padding: '5px 10px',
+          borderRadius: '4px',
+        }}
+      >
+        {row.active}
+      </div>
+    ),
+  },
+  {
+    name: "Pending Members",
+    selector: (row: any) => row.pending,
+    sortable: true,
+    cell: (row: any) => (
+      <div
+        style={{
+          padding: '5px 10px',
+          borderRadius: '4px',
+        }}
+      >
+        {row.pending}
+      </div>
+    ),
+  },
+];
+
 export const getadminLevelBenifitsColumns =()=>[
   {
     name: "Date",
