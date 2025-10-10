@@ -20,9 +20,9 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import WcIcon from "@mui/icons-material/Wc";
 import UserContext from "../../../context/user/userContext";
-import { useUpdateMember } from "../../../api/Memeber";
+import { useUpdateMember , useImageKitUpload } from "../../../api/Memeber";
 import { LoadingComponent } from "../../../App";
-import axios from "axios";
+import { toast } from "react-toastify";
 
 const Profile: React.FC = () => {
   const { user } = useContext(UserContext);
@@ -36,6 +36,8 @@ const Profile: React.FC = () => {
     profile_image_name:"" , 
   });
   const [loading, setLoading] = useState(false);
+
+  const imageKit = useImageKitUpload(user?.Member_id)
 
   // Update state when user data is fetched
   useEffect(() => {
@@ -74,20 +76,29 @@ const Profile: React.FC = () => {
     const file = e.target.files?.[0] ?? null;
     if(!file) return;
     setLoading(true)
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET);
-    data.append("cloud_name", import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
     try {
-      const uploadedImg = await axios.post(import.meta.env.VITE_CLOUDINARY_BASE_URL, data)
-    setFormData((prevData) => ({
-      ...prevData,
-      profile_image: uploadedImg.data.secure_url,
-      profile_image_name: uploadedImg.data.display_name
-    }));
+      // Pass the file as a parameter to the mutate function
+      imageKit.mutate(file, {
+        onSuccess: (data) => {
+          if (data.url) {
+            setFormData((prev) => ({
+              ...prev,
+              profile_image: data.url,
+              profile_image_name: file.name,
+            }));
+            toast.success("Image uploaded Successfully");
+          } else {
+            toast.error("Failed to get image URL");
+          }
+        },
+        onError: (err) => {
+          toast.error("Failed to upload image");
+          console.error(err);
+        },
+      });
     } catch (error) {
       console.error("Upload failed:", error);
-    }finally{
+    } finally {
       setLoading(false)
     }
     
@@ -218,7 +229,7 @@ const Profile: React.FC = () => {
           </AccordionDetails>
         </Accordion>
       </CardContent>
-      {(updateMember.isPending || loading)&& <LoadingComponent />}
+      {(updateMember.isPending || loading || imageKit.isPending)&& <LoadingComponent />}
     </Card>
   );
 };
