@@ -1,3 +1,4 @@
+import { CheckCircle2Icon, PackageIcon } from "lucide-react";
 import { SideBarMenuItemType } from "../../store/store";
 import {
   DashboardIcon,
@@ -11,8 +12,8 @@ import {
   PersonIcon,
   VerifiedUserIcon,
   LockIcon,
-  InventoryIcon,
-  HistoryIcon,
+  // InventoryIcon,
+  // HistoryIcon,
   PeopleIcon,
   AccountTreeIcon,
   PersonAddIcon,
@@ -21,8 +22,8 @@ import {
   SupportIcon,
   AnnouncementIcon,
   EventIcon,
-  RequestQuoteIcon,
-  ReceiptLongIcon,
+  // RequestQuoteIcon,
+  // ReceiptLongIcon,
   SmsIcon,
 } from "../Icons";
 
@@ -129,38 +130,56 @@ export const AdminSideBarMenuItems: SideBarMenuItemType[] = [
       },
     ],
   },
-  {
-    name: "Package",
-    icon: <InventoryIcon />,
-    isExpandable: true,
+   {
+    name: "Activate", 
+    icon: <DashboardIcon />,
+    isExpandable: true, 
     subItems: [
       {
-        name: "Generate Package",
-        path: "/admin/package/generate",
-        icon: <RequestQuoteIcon />,
+        name: "Activate",
+        icon: <CheckCircle2Icon />,
+        path: "/admin/Activate",
+        
       },
       {
-        name: "Package Request",
-        path: "/admin/package/requests",
-        icon: <ReceiptLongIcon />,
-      },
-      {
-        name: "Used Package",
-        path: "/admin/package/used",
-        icon: <InventoryIcon />,
-      },
-      {
-        name: "Unused Package",
-        path: "/admin/package/unused",
-        icon: <InventoryIcon />,
-      },
-      {
-        name: "Package History",
-        path: "/admin/package/history",
-        icon: <HistoryIcon />,
+        name: "Activate Package",
+        icon: <PackageIcon />,
+        path: "/admin/ActivatePackage",
+       
       },
     ],
   },
+  //   name: "Package",
+  //   icon: <InventoryIcon />,
+  //   isExpandable: true,
+  //   subItems: [
+  //     {
+  //       name: "Generate Package",
+  //       path: "/admin/package/generate",
+  //       icon: <RequestQuoteIcon />,
+  //     },
+  //     {
+  //       name: "Package Request",
+  //       path: "/admin/package/requests",
+  //       icon: <ReceiptLongIcon />,
+  //     },
+  //     {
+  //       name: "Used Package",
+  //       path: "/admin/package/used",
+  //       icon: <InventoryIcon />,
+  //     },
+  //     {
+  //       name: "Unused Package",
+  //       path: "/admin/package/unused",
+  //       icon: <InventoryIcon />,
+  //     },
+  //     {
+  //       name: "Package History",
+  //       path: "/admin/package/history",
+  //       icon: <HistoryIcon />,
+  //     },
+  //   ],
+ 
   {
     name: "Incomes",
     icon: <MonetizationOnIcon />,

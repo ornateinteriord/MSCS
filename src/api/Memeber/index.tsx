@@ -6,6 +6,7 @@ import { get, post, put } from "../Api";
 import axios from "axios";
 import TokenService from "../token/tokenService";
 
+
 export const useGetMemberDetails = (userId: string) => {
   const { getUser, setUser } = useContext(UserContext);
   return useQuery({
@@ -22,6 +23,22 @@ export const useGetMemberDetails = (userId: string) => {
     enabled: !!userId,
   });
 };
+export const activateMemberPackage = async (memberId:any) => {
+  try {
+    const response = await put(`/user/activate-package/${memberId}`, 
+      {}, 
+    );
+    console.log("Package Activated:", response.data);
+    return response.data;
+  } catch (error: any) {
+    console.error(
+      "Error activating package:",
+      error.response?.data || error.message
+    );
+    throw error;
+  }
+};
+
 
 export const useUpdateMember = () => {
   const userId = TokenService.getUserId();
@@ -229,6 +246,29 @@ export const useGetMultiLevelSponsorship = () => {
         throw new Error(response.message || "Failed to fetch multi-level sponsorship data");
       }
     }
+  });
+};
+
+
+export const useActivatePackage = () => {
+  return useMutation({
+    mutationFn: async (memberId: any) => {
+      return await put(`/user/activate-package/${memberId}`, {
+        activatedAt: new Date().toISOString()
+      });
+    },
+    onSuccess: (response) => {
+      if (response.success) {
+        toast.success(response.message);
+      } else {
+        console.error("Activation failed:", response.message);
+      }
+    },
+    onError: (err: any) => {
+      const errorMessage = err.response?.data?.message;
+      console.error("Activation error:", errorMessage);
+      toast.error(errorMessage);
+    },
   });
 };
 

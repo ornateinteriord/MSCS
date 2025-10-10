@@ -63,24 +63,54 @@ const Tree = () => {
     { field: "Earnings", value: "Rs. 0" },
   ]:[]
 
+  // Get avatar background color based on status
+  const getAvatarBackgroundColor = (status: string) => {
+    const statusLower = status?.toLowerCase();
+    if (statusLower === 'inactive') {
+      return '#ff6b6b'; 
+    } else if (statusLower === 'active') {
+      return '#51cf66'; 
+    }
+    return '#6b21a8'; 
+  };
+
   // Main user profile component
   const UserProfile = ({ userDetails }: { userDetails: any }) => (
     
-    <Box className="tree-user-profile"  onMouseEnter={() => setHoveredSponsor(userDetails)}>
-      <Avatar
-        className="tree-user-avatar"
-        src={userDetails?.profile_image || ""}
-      >
-        {!userDetails?.profile_image &&
-          userDetails?.Name.charAt(0).toUpperCase()}
-      </Avatar>
-      <Typography variant="h6" fontWeight="bold">
-        {userDetails?.Name}
-      </Typography>
-      <Typography variant="caption" color="textSecondary">
-        {userDetails?.Member_id}
-      </Typography>
+   <Box
+  className="sponsor-container"
+  onClick={() => handleSponsorClick(userDetails.Member_id)}
+  onMouseEnter={() => setHoveredSponsor(userDetails)}
+>
+  <>
+    <Box
+      className="sponsor-avatar"
+      sx={{
+        width: 40,
+        height: 40,
+        borderRadius: '50%',
+        backgroundColor: getAvatarBackgroundColor(userDetails?.status),
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: '1rem',
+        backgroundImage: userDetails?.profile_image ? `url(${userDetails.profile_image})` : 'none',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {!userDetails?.profile_image && userDetails?.Name?.charAt(0).toUpperCase()}
     </Box>
+    <Typography variant="body2" fontWeight="bold">
+      {userDetails?.Name}
+    </Typography>
+    <Typography variant="caption" color="textSecondary">
+      {userDetails?.Member_id}
+    </Typography>
+  </>
+</Box>
   );
 
   // Sponsored user component
@@ -91,7 +121,13 @@ const Tree = () => {
       onMouseEnter={() => setHoveredSponsor(user)}
     >
       <>
-        <Avatar className="sponsor-avatar" src={user.profile_image || ""}>
+        <Avatar 
+          className="sponsor-avatar" 
+          src={user.profile_image || ""}
+          sx={{
+            backgroundColor: getAvatarBackgroundColor(user?.status),
+          }}
+        >
           {!user.profile_image && user.Name.charAt(0).toUpperCase()}
         </Avatar>
         <Typography variant="body2" fontWeight="bold">
