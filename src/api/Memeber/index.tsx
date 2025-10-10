@@ -3,6 +3,7 @@ import { useContext } from "react";
 import UserContext from "../../context/user/userContext";
 import { toast } from "react-toastify";
 import { get, post, put } from "../Api";
+import axios from "axios";
 import TokenService from "../token/tokenService";
 
 
@@ -267,6 +268,34 @@ export const useActivatePackage = () => {
       const errorMessage = err.response?.data?.message;
       console.error("Activation error:", errorMessage);
       toast.error(errorMessage);
+    },
+  });
+};
+
+export const useImageKitUpload = (username: string) => {
+  return useMutation<{ url: string }, Error, File>({
+    mutationFn: async (file: File) => {
+      // 1. Get signature from backend
+      const authRes = await get("/image-kit-auth"); 
+      const { signature, expire, token } = authRes;
+
+      // 2. Prepare form data
+      const data = new FormData();
+      data.append("file", file);
+       data.append("fileName", username); 
+      data.append("publicKey", import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY);
+      data.append("signature", signature);
+      data.append("expire", expire);
+      data.append("token", token);
+      data.append("folder", "/mscs-profile-images"); // optional folder
+
+      // 3. Upload to ImageKit
+      const uploadRes = await axios.post(
+        "https://upload.imagekit.io/api/v1/files/upload",
+        data
+      );
+
+      return uploadRes.data; // contains URL in .url
     },
   });
 };
