@@ -33,6 +33,7 @@ import MembersUpdateForm from "./pages/Admin-Pages/UpdateForms";
 
 
 
+
 // public pages
 // const Home = lazy(() => import("./pages/Home/Home"));
 const Login = lazy(() => import("./pages/Auth/Login"));
@@ -72,6 +73,8 @@ const AdminNews = lazy(() => import("./pages/Admin-Pages/News/News"));
 const AdminHolidays = lazy(
   () => import("./pages/Admin-Pages/Holidays/Holidays")
 );
+const Activate = lazy(() => import("./pages/Admin-Pages/Activate/Activate"));
+const ActivatePackage = lazy(() => import("./pages/Admin-Pages/activatePackage/ActivatePackage"));
 
 // user pages
 const UserDashboard = lazy(
@@ -211,11 +214,14 @@ const RoutesProvider = ({
               <Route path="/admin/dashboard" element={<AdminDashboard />} />{" "}
               {/* admin member routes */}
               <Route path="/admin/members" element={<Members />} />
+
               
               <Route
                 path="/admin/members/pending"
                 element={<PendingMembers />}
               />
+              <Route path="/admin/Activate" element={<Activate />} />
+              <Route path="/admin/ActivatePackage" element={<ActivatePackage />} />
               <Route path="/admin/members/active" element={<ActiveMembers />} />
               <Route
                 path="/admin/members/inactive"
