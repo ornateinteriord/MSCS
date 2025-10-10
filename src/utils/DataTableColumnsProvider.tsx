@@ -425,7 +425,7 @@ export const getPendingMembersColumns = (
   },
   {
     name: "Sponsor",
-    selector: (row: any) => row.Sponsor_name ?? '-',
+    selector: (row: any) => row.Sponsor_name ?? "-",
     sortable: true,
   },
   {
@@ -440,17 +440,46 @@ export const getPendingMembersColumns = (
     cell: (row: any) => (
       <div
         style={{
-          color: row.status === 'active' ? 'green' : row.status.toLowerCase() === 'pending' ? '#ffd700' : 'red',
-          padding: '5px 10px',
-          borderRadius: '4px',
-          fontSize: '14px',
+          color:
+            row.status.toLowerCase() === "active"
+              ? "green"
+              : row.status.toLowerCase() === "pending"
+              ? "#ffd700"
+              : "red",
+          padding: "5px 10px",
+          borderRadius: "4px",
+          fontSize: "14px",
         }}
       >
         {row.status.charAt(0).toUpperCase() + row.status.slice(1)}
       </div>
     ),
   },
+  {
+    name: "Action",
+    omit: false,
+    cell: (row: any) =>
+      row.status.toLowerCase() === "inactive" ? (
+        <div style={{ color: "red", fontWeight: 500 }}>
+          Cannot Activate
+        </div>
+      ) : (
+        <IconButton
+          onClick={() => handleActivateClick(row.Member_id)}
+          disabled={isActivating}
+          sx={{
+            color: "#51cf66",
+            padding: "5px",
+            borderRadius: "4px",
+            cursor: "pointer",
+          }}
+        >
+          <CheckCircle />
+        </IconButton>
+      ),
+  },
 ];
+
 
 export const getSupportTicketColumns = (handleOpenDialog : any) =>  [
   {
