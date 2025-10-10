@@ -105,27 +105,20 @@ const Navbar = ({
                   </div>
                 )}
 
-                {isHomePage ? (
-                  <Button variant="ghost" style={{ marginRight: "8px" }} onClick={() => navigate(`/${userRole?.toLowerCase()}/dashboard`)}>
-                    Go to Dashboard
+                {!isHomePage && !isAdmin && (
+                  <Button
+                    className="logout-btn"
+                    variant="ghost"
+                    style={{ marginRight: "8px", fontSize: "50px" }}
+                    onClick={handleLogout}
+                  >
+                    <LogOutIcon />
                   </Button>
-                ) : (
-                  !isAdmin && (
-                    <Button
-                      className="logout-btn"
-                      variant="ghost"
-                      style={{ marginRight: "8px", fontSize: "50px" }}
-                      onClick={handleLogout}
-                    >
-                      <LogOutIcon />
-                    </Button>
-                  )
                 )}
               </div>
             ) : (
-              <Button variant="secondary" style={{ marginRight: "8px" }} onClick={() => navigate("/login")}>
-                Login
-              </Button>
+              // Login button removed - users will be directed to login page directly
+              <div></div>
             )}
           </div>
         </Toolbar>
@@ -155,7 +148,6 @@ const Navbar = ({
               }}
             >
               {user?.username ? user.username.charAt(0).toUpperCase() : ""}
-
             </Avatar>
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
               {getFormattedName(user?.username)}

@@ -856,12 +856,12 @@ export const getMultiLevelColumns = () => [
     sortable: true,
   },
   {
-    name: "Total Members",
+    name: "Total ",
     selector: (row: any) => row.total,
     sortable: true,
   },
   {
-    name: "Active Members",
+    name: "Active ",
     selector: (row: any) => row.active,
     sortable: true,
     cell: (row: any) => (
@@ -876,7 +876,7 @@ export const getMultiLevelColumns = () => [
     ),
   },
   {
-    name: "Pending Members",
+    name: "Pending ",
     selector: (row: any) => row.pending,
     sortable: true,
     cell: (row: any) => (
