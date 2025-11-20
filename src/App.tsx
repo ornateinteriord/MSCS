@@ -49,6 +49,12 @@ const UpdatePassword = lazy(()=>import("./pages/Admin-Pages/admin-panel/UpdatePa
 const AdminDashboard = lazy(
   () => import("./pages/Admin-Pages/AdminDashboard/Dashboard")
 );
+const AdminPlans = lazy(
+  () => import("./pages/Admin-Pages/Plans/Plans")
+);
+const AdminTeam = lazy(
+  () => import("./pages/Admin-Pages/Team/Team")
+);
 const AdminCashBack = lazy(
   () => import("./pages/Admin-Pages/Incomes/CashBack")
 );
@@ -59,6 +65,10 @@ const AdminLevelBenifits = lazy(
   () => import("./pages/Admin-Pages/Incomes/LevelBenifits")
 );
 const AdminPayout = lazy(() => import("./pages/Admin-Pages/Payout/Payout"));
+const PayoutReport = lazy(() => import("./pages/Admin-Pages/Payout/PayoutReport"));
+const PlanRecoveryReport = lazy(() => import("./pages/Admin-Pages/PlanRecovery/PlanRecoveryReport"));
+const LoanRecoveryReport = lazy(() => import("./pages/Admin-Pages/LoanRecovery/LoanRecoveryReport"));
+const CollectedLoanReport = lazy(() => import("./pages/Admin-Pages/LoanRecovery/CollectedLoanReport"));
 
 const AdminTransactions = lazy(
   () => import("./pages/Admin-Pages/Transactions/Transactions")
@@ -122,6 +132,8 @@ const UserWallet = lazy(() => import("./pages/User-Pages/Wallet/Wallet"));
 const LoansMemberPending = lazy(() => import("./pages/Loans/Loanspending/Pending"));
 const LoansMemberProcessed = lazy(() => import("./pages/Loans/Loansprocesssed/Processed"));
 const LoansRepaymentsList = lazy(() => import("./pages/Loans/Repaymentlist/LoansList"));
+const AdvisedLoan = lazy(() => import("./pages/Loans/AdvisedLoan"));
+const SelfLoan = lazy(() => import("./pages/Loans/SelfLoan"));
 // const LoansRepaymentsPlaceholder = lazy(() => import("./pages/Loans/Repayments/RepaymentPlaceholder"));
 
 export const LoadingComponent = () => {
@@ -222,6 +234,8 @@ const RoutesProvider = ({
             <Route element={<ProtectedRoute allowedRoles={["ADMIN"]} />}>
             <Route path="/admin/update-password" element={<UpdatePassword/>}/>
               <Route path="/admin/dashboard" element={<AdminDashboard />} />{" "}
+              <Route path="/admin/plans" element={<AdminPlans />} />
+              <Route path="/admin/team" element={<AdminTeam />} />
               {/* admin member routes */}
               <Route path="/admin/members" element={<Members />} />
 
@@ -269,6 +283,10 @@ const RoutesProvider = ({
                 element={<AdminDailyBenifitsPayouts />}
               />
               <Route path="/admin/payout" element={<AdminPayout />} />
+              <Route path="/admin/payout/report" element={<PayoutReport />} />
+              <Route path="/admin/plan/recovery-report" element={<PlanRecoveryReport />} />
+              <Route path="/admin/loan/recovery" element={<LoanRecoveryReport />} />
+              <Route path="/admin/loan/recovery-report" element={<CollectedLoanReport />} />
 
               {/* admin transaction routes */}
               <Route
@@ -289,9 +307,12 @@ const RoutesProvider = ({
         
             </Route>
              <Route element={<ProtectedRoute allowedRoles={["ADMIN", "USER"]} />}>
+              <Route path="/admin/loan/self" element={<SelfLoan />} />
+              <Route path="/admin/loan/advised" element={<AdvisedLoan />} />
               <Route path="/admin/member/pending" element={<LoansMemberPending />} />
               <Route path="/admin/member/processed" element={<LoansMemberProcessed />} />
               <Route path="/admin/repayments/list" element={<LoansRepaymentsList />} />
+             
               {/* <Route path="/loans/repayments/placeholder" element={<LoansRepaymentsPlaceholder />} /> */}
             </Route>
 
